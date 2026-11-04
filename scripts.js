@@ -1,34 +1,48 @@
-/*!
-* Start Bootstrap - Resume v7.0.6 (https://startbootstrap.com/theme/resume)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
-
-window.addEventListener('DOMContentLoaded', event => {
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const sideNav = document.body.querySelector('#sideNav');
-    if (sideNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#sideNav',
-            rootMargin: '0px 0px -40%',
+// Local navigation: no external JavaScript dependencies.
+window.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.navbar-toggler');
+    const menu = document.querySelector('#navbarResponsive');
+    const links = [...document.querySelectorAll('#navbarResponsive .nav-link')];
+    const closeMenu = () => {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+    };
+    toggle.addEventListener('click', () => {
+        const expanded = menu.classList.toggle('show');
+        toggle.setAttribute('aria-expanded', String(expanded));
+    });
+    links.forEach(link => link.addEventListener('click', closeMenu));
+    document.querySelector('.navbar-brand').addEventListener('click', closeMenu);
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu.classList.contains('show')) {
+            closeMenu();
+            toggle.focus();
+        }
+    });
+    const sections = [...document.querySelectorAll('main > section')];
+    const updateActive = () => {
+        const marker = window.innerHeight * 0.35;
+        let current = sections[0];
+        sections.forEach(section => {
+            if (section.getBoundingClientRect().top <= marker) current = section;
+        });
+        links.forEach(link => {
+            const active = link.hash === `#${current.id}`;
+            link.classList.toggle('active', active);
+            if (active) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
         });
     };
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
+    let pending = false;
+    window.addEventListener('scroll', () => {
+        if (!pending) {
+            pending = true;
+            window.requestAnimationFrame(() => { updateActive(); pending = false; });
+        }
+    }, { passive: true });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 992) closeMenu();
+        updateActive();
     });
-
+    updateActive();
 });

@@ -10970,3 +10970,86 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+/* Andy Chao — local typography and a restrained automotive palette. */
+:root { --bs-primary: #163b3d; --bs-primary-rgb: 22,59,61; --accent: #a85938; --ink: #1f3436; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: #faf9f6; color: #596264; font-family: Arial, Helvetica, sans-serif; line-height: 1.75; }
+h1,h2,h3,h4 { font-family: Arial, Helvetica, sans-serif; color: var(--ink); text-transform: none; letter-spacing: -.045em; }
+h1 { font-size: clamp(4rem, 9vw, 8rem); line-height: 1.05; font-weight: 800; margin: 1.25rem 0; }
+h1 > span,h2 > span { color: var(--accent); }
+h2 { font-size: clamp(2.3rem, 4vw, 3.9rem); line-height: 1.15; margin-bottom: 2rem; }
+h3 { font-size: 1.25rem; letter-spacing: -.025em; line-height: 1.4; }
+a { color: var(--accent); } a:hover { color: #713b25; }
+a:focus-visible,button:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+#sideNav { background: #163b3d; padding: .7rem 1.25rem; }
+#sideNav .navbar-brand { display: flex; align-items: center; gap: .8rem; color: #fff; }
+.brand-monogram { font-size: 1.8rem; font-weight: 800; letter-spacing: -.08em; line-height: 1; }
+.brand-monogram span { color: #dfa484; }
+.brand-name { font-size: 1rem; font-weight: 600; }
+.brand-caption,.sidebar-note { display: none; }
+#sideNav .navbar-nav .nav-link { color: #c1d0cd; font-size: .75rem; letter-spacing: .13em; padding: .65rem 0; }
+#sideNav .navbar-nav .nav-link.active,#sideNav .navbar-nav .nav-link:hover { color: #fff; }
+.resume-section { border-bottom: 1px solid #dedfd8; }
+.eyebrow { font-size: .68rem; font-weight: 700; letter-spacing: .19em; color: var(--accent); margin-bottom: 1.5rem; }
+.hero-role { font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--ink); line-height: 1.35; font-weight: 500; letter-spacing: -.03em; margin: 1.5rem 0 2rem; }
+.lead { font-size: 1.15rem; max-width: 46rem; font-weight: 400; }
+.intro-detail,.section-intro { max-width: 44rem; }
+.action-link { display: inline-flex; gap: 2rem; font-size: .85rem; font-weight: bold; text-decoration: none; border-bottom: 1px solid var(--accent); padding: .6rem 0; margin: 1.2rem 0; }
+.hero-tags,.strength-tags { display: flex; flex-wrap: wrap; gap: .65rem; }
+.hero-tags { margin-top: 2rem; }
+.hero-tags span,.strength-tags span { border: 1px solid #d6dcd5; padding: .4rem .85rem; font-size: .72rem; border-radius: 2px; }
+.experience-item { display: flex; gap: 1.6rem; padding: 1.7rem 0; border-top: 1px solid #dedfd8; }
+.experience-item:last-child p:last-child { margin-bottom: 0; }
+.item-number { color: var(--accent); font-size: .75rem; padding-top: .25rem; }
+.section-intro { margin-bottom: 2.5rem; }
+.impact-section { background: #f0f1eb; }
+.metrics-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem 3rem; margin-top: 3rem; }
+.metric { border-top: 1px solid #c5cfc4; padding-top: 1.25rem; }
+.metric-value { color: var(--accent); font-size: clamp(3rem,6vw,4.8rem); letter-spacing: -.07em; line-height: 1.2; margin-bottom: 1rem; }
+.metric-value span { font-size: .4em; letter-spacing: -.03em; }
+.metric p:last-child { font-size: .9rem; max-width: 23rem; }
+.global-grid,.skills-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 3rem; margin-top: 3rem; }
+.global-grid article { border-top: 2px solid var(--accent); padding-top: 1.5rem; }
+.region-label { font-size: .65rem; letter-spacing: .15em; color: var(--accent); display: block; margin-bottom: 1rem; }
+.closing-line { border-left: 3px solid var(--accent); padding-left: 1.5rem; margin-top: 3rem; color: var(--ink); font-size: 1.2rem; }
+.capability-list { list-style: none; padding: 0; margin-top: 1.3rem; }
+.capability-list li { padding: .6rem 0; border-bottom: 1px solid #dedfd8; font-size: .9rem; }
+.language-list { margin-top: 1.3rem; }
+.language-list > div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #dedfd8; padding: .6rem 0; font-size: .9rem; }
+.language-list dd { text-align: right; margin: 0; }
+.language-list dd span { font-size: .8rem; color: var(--accent); }
+.strengths-title { margin: 2rem 0 1rem; }
+.page-footer { display: flex; justify-content: space-between; gap: 1.5rem; border-top: 1px solid #dedfd8; padding-top: 1.5rem; margin-top: 5rem; font-size: .7rem; }
+.page-footer a { white-space: nowrap; }
+.skip-link { position: fixed; top: -100px; left: 1rem; z-index: 1100; background: #fff; padding: .7rem 1rem; }
+.skip-link:focus { top: .6rem; }
+@media (min-width:992px) {
+ html { scroll-padding-top: 0; }
+ #sideNav { width: 17rem; padding: 3.5rem 2rem 2rem; align-items: flex-start; }
+ #sideNav .navbar-brand { flex-direction: column; align-items: flex-start; margin: 0 0 3.5rem; padding: 0; gap: .8rem; }
+ .brand-monogram { font-size: 4.5rem; margin-bottom: .7rem; }
+ .brand-name { font-size: 1.2rem; }
+ .brand-caption { display: block; font-size: .47rem; letter-spacing: .18em; color: #b6c9c5; }
+ #sideNav .navbar-collapse { align-items: flex-start; width: 100%; flex-grow: 0; }
+ #sideNav .navbar-nav { text-align: left; }
+ .sidebar-note { display: block; margin-top: auto; color: #b6c9c5; font-size: .65rem; line-height: 1.8; }
+ section.resume-section { padding: 5rem 4rem; min-height: 100vh; }
+}
+@media (max-width:575.98px) {
+ section.resume-section { padding: 4rem 1.5rem; }
+ .metrics-grid,.global-grid,.skills-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+ .metrics-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+ .metric h3 { font-size: 1rem; }
+ .metric p:last-child { font-size: .8rem; }
+ .eyebrow { font-size: .58rem; }
+ .page-footer { flex-direction: column; }
+ .experience-item { gap: 1rem; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+@media print {
+ body { padding: 0; background: white; }
+ #sideNav,.skip-link,.action-link,.page-footer a { display: none !important; }
+ section.resume-section { min-height: auto; padding: 2rem 0; break-inside: avoid; }
+ h1 { font-size: 4rem; } h2 { font-size: 2rem; }
+ .metrics-grid,.global-grid,.skills-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
