@@ -11053,3 +11053,64 @@ a:focus-visible,button:focus-visible { outline: 3px solid var(--accent); outline
  h1 { font-size: 4rem; } h2 { font-size: 2rem; }
  .metrics-grid,.global-grid,.skills-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
+
+/* Resume actions and an at-a-glance introduction. */
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 2rem; }
+.print-button { background: transparent; border: 1px solid #abb9b3; border-radius: 3px; color: var(--ink); font-size: .8rem; font-weight: 600; padding: .75rem 1rem; min-height: 44px; }
+.print-button:hover { background: #163b3d; border-color: #163b3d; color: white; }
+.print-button span { margin-left: .75rem; }
+.career-snapshot { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; border-top: 1px solid #d6dcd5; margin-top: 2rem; padding-top: 1.5rem; max-width: 48rem; }
+.career-snapshot strong { display: block; color: var(--ink); font-size: 1.1rem; letter-spacing: -.03em; }
+.career-snapshot span { display: block; font-size: .72rem; margin-top: .25rem; }
+#sideNav .navbar-nav .nav-link.active { text-decoration: underline; text-decoration-color: #dfa484; text-underline-offset: .4rem; text-decoration-thickness: 2px; }
+@media (max-width:575.98px) {
+ .career-snapshot { grid-template-columns: 1fr; gap: 1rem; }
+ .career-snapshot > div { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+ .career-snapshot span { text-align: right; max-width: 55%; }
+ .navbar-toggler { min-width: 44px; min-height: 44px; }
+}
+@media print {
+ @page { size: A4; margin: 14mm; }
+ body { font-size: 10pt; line-height: 1.45; }
+ .hero-actions,.hero-tags,.career-snapshot,.page-footer { display: none !important; }
+ section.resume-section { padding: 5mm 0; min-height: 0; break-inside: auto; }
+ h1 { font-size: 30pt; margin: 0 0 3mm; }
+ h2 { font-size: 19pt; margin-bottom: 4mm; break-after: avoid; }
+ h3 { font-size: 12pt; break-after: avoid; }
+ .eyebrow { margin-bottom: 2mm; font-size: 7pt; }
+ .hero-role { font-size: 15pt; margin: 3mm 0; }
+ .lead { font-size: 11pt; }
+ .section-intro { margin-bottom: 4mm; }
+ .experience-item { padding: 4mm 0; break-inside: avoid; }
+ .metrics-grid,.global-grid,.skills-grid { margin-top: 4mm; gap: 5mm; }
+ .metric,.global-grid article { padding-top: 3mm; break-inside: avoid; }
+ .metric-value { font-size: 30pt; margin-bottom: 2mm; }
+ .metric p:last-child,.capability-list li,.language-list > div { font-size: 9pt; }
+ .closing-line { font-size: 11pt; margin-top: 4mm; }
+ .impact-section { background: white; }
+}
+
+/* Detailed employment, education, and recognition. */
+.role-meta { color: var(--accent); font-size: .68rem; font-weight: 700; letter-spacing: .1em; margin-bottom: .5rem; }
+.role-title { color: var(--ink); font-weight: 600; margin: .5rem 0 1rem; }
+.experience-list { padding-left: 1.15rem; }
+.experience-list li { margin-bottom: .65rem; }
+.assignment { border-left: 2px solid #cbd4cb; padding-left: 1.25rem; margin-top: 1.5rem; }
+.assignment h4 { font-size: 1rem; letter-spacing: -.02em; }
+.education-list article { padding: 1.5rem 0; border-top: 1px solid #dedfd8; }
+.recognition-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem; margin-top: 2rem; }
+.recognition-grid article { border-top: 2px solid var(--accent); padding-top: 1.5rem; }
+.patent-id { font-size: .8rem; color: #596264; overflow-wrap: anywhere; }
+@media (max-width:575.98px) { .recognition-grid { grid-template-columns: 1fr; } }
+@media print {
+ .role-meta { font-size: 7pt; }
+ .experience-list li { margin-bottom: 2mm; }
+ .education-list article,.recognition-grid article { break-inside: avoid; padding-top: 3mm; }
+ .recognition-grid { gap: 5mm; margin-top: 4mm; }
+ .assignment { margin-top: 3mm; }
+}
+.contact-details { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; margin-top: 1.5rem; font-size: .8rem; }
+.contact-details a { overflow-wrap: anywhere; }
+.manufacturing-note { margin-top: 2rem; border-left: 3px solid var(--accent); padding-left: 1.5rem; max-width: 46rem; }
+.manufacturing-note p { margin-bottom: 0; }
+@media print { .contact-details { font-size: 9pt; margin-top: 3mm; } .manufacturing-note { break-inside: avoid; margin-top: 4mm; } }

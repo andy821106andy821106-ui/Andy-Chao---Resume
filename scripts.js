@@ -1,5 +1,8 @@
 // Local navigation: no external JavaScript dependencies.
 window.addEventListener('DOMContentLoaded', () => {
+    const printButton = document.querySelector('.print-button');
+    printButton.hidden = false;
+    printButton.addEventListener('click', () => window.print());
     const toggle = document.querySelector('.navbar-toggler');
     const menu = document.querySelector('#navbarResponsive');
     const links = [...document.querySelectorAll('#navbarResponsive .nav-link')];
